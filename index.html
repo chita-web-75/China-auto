@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>China Avtotransit — Автомобили из Китая под ключ в Чите</title>
+<meta name="description" content="Заказ, проверка и доставка автомобилей из Китая под ключ через МАПП Забайкальск в Читу за 14–20 дней. Расчёт цены онлайн, ЭПТС, договор.">
+<meta name="theme-color" content="#090D16">
+<style>
+  :root {
+    --bg: #090D16;
+    --bg-elevated: #111726;
+    --card: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.09);
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --accent: #FF2D55;
+    --amber: #FFB020;
+    --green: #10B981;
+    --grad: linear-gradient(135deg, #FF2D55 0%, #FF6A3D 50%, #FFB020 100%);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif; }
+  body { background: var(--bg); color: var(--text); line-height: 1.5; overflow-x: hidden; -webkit-font-smoothing: antialiased; padding-bottom: calc(76px + var(--safe-bottom)); }
+  a { color: inherit; text-decoration: none; }
+  button, input { font: inherit; color: inherit; border: none; outline: none; background: none; }
+  button { cursor: pointer; }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* Идеальная адаптивная шапка без наложений */
+  header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(9, 13, 22, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px; gap: 12px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    min-width: 0; flex: 1;
+  }
+  .brand-icon {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--grad); display: grid; place-items: center;
+    flex-shrink: 0; box-shadow: 0 4px 14px rgba(255, 45, 85, 0.4);
+  }
+  .brand-icon svg { width: 18px; height: 18px; color: #fff; }
+  .brand-info { min-width: 0; display: flex; flex-direction: column; }
+  .brand-name {
+    font-weight: 800; font-size: 15px; line-height: 1.2;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+  }
+  .brand-sub {
+    font-size: 10.5px; font-weight: 700; color: var(--amber);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .nav-links { display: flex; gap: 22px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  .nav-links a:hover { color: #fff; }
+  .nav-btn {
+    flex-shrink: 0; padding: 8px 14px; border-radius: 10px;
+    background: rgba(255, 176, 32, 0.12); border: 1px solid rgba(255, 176, 32, 0.35);
+    color: var(--amber); font-size: 13px; font-weight: 700;
+    white-space: nowrap; transition: 0.2s;
+  }
+  .nav-btn:hover { background: rgba(255, 176, 32, 0.2); }
+  .nav-btn:active { transform: scale(0.96); }
+
+  /* Кнопки */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 22px; border-radius: 14px; font-weight: 700; font-size: 15px;
+    transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary {
+    background: var(--grad); color: #fff;
+    box-shadow: 0 12px 28px -8px rgba(255, 45, 85, 0.65);
+  }
+  .btn-ghost {
+    background: var(--card); border: 1px solid var(--card-border); color: #fff;
+  }
+
+  /* Первый экран */
+  .hero {
+    padding: 36px 0 56px; position: relative;
+    background:
+      radial-gradient(circle at 85% 12%, rgba(255, 45, 85, 0.16), transparent 45%),
+      radial-gradient(circle at 12% 75%, rgba(255, 176, 32, 0.10), transparent 45%);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 36px; align-items: center; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 99px; font-size: 11px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: rgba(255, 45, 85, 0.12); border: 1px solid rgba(255, 45, 85, 0.3);
+    color: #FF7A93; margin-bottom: 16px;
+  }
+  .pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 1.8s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+  h1 {
+    font-size: clamp(27px, 5vw, 48px); font-weight: 800;
+    line-height: 1.12; letter-spacing: -0.025em; margin-bottom: 14px;
+  }
+  .hero-desc { color: var(--muted); font-size: 16px; max-width: 540px; margin-bottom: 24px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .hero-cta .btn { flex: 1; min-width: 190px; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .kpi {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 12px 14px;
+  }
+  .kpi b { display: block; font-size: 19px; font-weight: 800; color: #fff; line-height: 1.2; }
+  .kpi span { font-size: 11.5px; color: var(--muted); }
+
+  /* Интерактивная карточка маршрута */
+  .route-card {
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid var(--card-border); border-radius: 22px; padding: 22px;
+    position: relative; overflow: hidden;
+  }
+  .route-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .route-top span { font-size: 12px; font-weight: 700; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; }
+  .route-top small { font-size: 12px; color: var(--green); font-weight: 700; }
+  .route-svg { width: 100%; height: 92px; margin-bottom: 14px; }
+  .route-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 12px; }
+  .route-tab {
+    padding: 8px 6px; border-radius: 10px; font-size: 11.5px; font-weight: 700;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+    color: var(--muted); text-align: center; transition: 0.2s;
+  }
+  .route-tab.active { background: rgba(255, 45, 85, 0.18); border-color: var(--accent); color: #fff; }
+  .route-info {
+    background: rgba(0, 0, 0, 0.3); border-radius: 12px; padding: 12px 14px;
+    font-size: 13px; color: var(--muted); min-height: 62px;
+  }
+  .route-info b { color: #fff; display: block; margin-bottom: 2px; font-size: 13.5px; }
+
+  /* Общие секции */
+  section { padding: 52px 0; border-top: 1px solid var(--card-border); }
+  .sec-tag { font-size: 11.5px; font-weight: 800; color: var(--amber); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; }
+  h2 { font-size: clamp(23px, 4vw, 34px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .sec-sub { color: var(--muted); font-size: 15px; margin-bottom: 26px; max-width: 600px; }
+
+  /* Каталог моделей */
+  .cars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .car-card {
+    background: var(--bg-elevated); border: 1px solid var(--card-border);
+    border-radius: 20px; padding: 18px; display: flex; flex-direction: column;
+    transition: transform 0.25s, border-color 0.25s;
+  }
+  .car-card:hover { transform: translateY(-4px); border-color: rgba(255, 45, 85, 0.5); }
+  .car-vis {
+    height: 96px; border-radius: 14px; padding: 12px; margin-bottom: 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .v1 { background: linear-gradient(135deg, #2A1628, #162038); }
+  .v2 { background: linear-gradient(135deg, #162C2E, #162038); }
+  .v3 { background: linear-gradient(135deg, #2E2214, #162038); }
+  .v4 { background: linear-gradient(135deg, #1A2142, #162038); }
+  .car-badge { align-self: flex-start; font-size: 10.5px; font-weight: 800; padding: 3px 9px; border-radius: 99px; background: rgba(0,0,0,0.45); color: var(--amber); }
+  .car-spec-line { font-size: 11.5px; color: rgba(255,255,255,0.8); font-weight: 600; }
+  .car-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+  .car-year { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+  .car-price-box {
+    background: rgba(0, 0, 0, 0.28); border-radius: 12px; padding: 10px 12px; margin-bottom: 14px;
+  }
+  .car-price-box small { display: block; font-size: 11px; color: var(--muted); }
+  .car-price-box b { font-size: 18px; color: var(--amber); font-weight: 800; }
+  .car-card .btn { width: 100%; padding: 11px 14px; font-size: 13.5px; margin-top: auto; }
+
+  /* Калькулятор */
+  .calc-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 20px; align-items: start; }
+  .panel { background: var(--bg-elevated); border: 1px solid var(--card-border); border-radius: 22px; padding: 24px; }
+  .chosen-bar {
+    display: none; align-items: center; justify-content: space-between;
+    background: rgba(255, 45, 85, 0.14); border: 1px solid rgba(255, 45, 85, 0.4);
+    padding: 10px 14px; border-radius: 12px; margin-bottom: 18px; font-size: 13.5px;
+  }
+  .chosen-bar.show { display: flex; }
+  .ctrl-group { margin-bottom: 22px; }
+  .ctrl-label { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .ctrl-label b { font-size: 19px; color: #fff; text-transform: none; letter-spacing: 0; }
+
+  .body-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .age-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .seg-btn {
+    padding: 10px 6px; border-radius: 11px; font-size: 12.5px; font-weight: 700;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--card-border);
+    color: var(--muted); text-align: center; transition: 0.2s;
+  }
+  .seg-btn.active { background: rgba(255, 45, 85, 0.2); border-color: var(--accent); color: #fff; }
+
+  input[type=range] {
+    width: 100%; height: 6px; accent-color: var(--accent); cursor: pointer;
+  }
+  .range-ends { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+
+  .res-panel { background: linear-gradient(160deg, rgba(255,45,85,0.11), var(--bg-elevated) 55%); }
+  .res-line { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed var(--card-border); font-size: 14px; }
+  .res-line span { color: var(--muted); }
+  .res-total {
+    margin-top: 16px; padding: 16px; border-radius: 16px;
+    background: rgba(0,0,0,0.35); border: 1px solid rgba(255,45,85,0.45);
+  }
+  .res-total small { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+  .res-total .sum { font-size: 30px; font-weight: 800; line-height: 1.15; margin-top: 2px; }
+  .res-save {
+    margin-top: 10px; padding: 12px 16px; border-radius: 14px;
+    background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  }
+  .res-save span { font-size: 12.5px; color: #A7F3D0; }
+  .res-save b { font-size: 17px; color: #34D399; white-space: nowrap; }
+  .disclaimer { font-size: 11.5px; color: var(--muted); margin-top: 12px; line-height: 1.45; }
+
+  /* Форма заявки */
+  .order-card {
+    background: linear-gradient(135deg, rgba(255,45,85,0.14), var(--bg-elevated) 60%);
+    border: 1px solid var(--card-border); border-radius: 24px; padding: 28px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center;
+  }
+  .order-points { margin-top: 14px; display: grid; gap: 8px; font-size: 14px; color: var(--muted); }
+  .order-form { display: grid; gap: 10px; }
+  .field-inp {
+    width: 100%; padding: 13px 15px; border-radius: 12px;
+    background: rgba(255,255,255,0.06); border: 1px solid var(--card-border);
+    color: #fff; font-size: 15px;
+  }
+  .field-inp::placeholder { color: var(--muted); }
+  .field-inp:focus { border-color: var(--accent); }
+
+  footer { border-top: 1px solid var(--card-border); padding: 24px 0; font-size: 12.5px; color: var(--muted); }
+  .foot-flex { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+  /* Аккуратная компактная кнопка ИИ в самом нижнем правом углу */
+  .ai-fab {
+    position: fixed;
+    right: 14px;
+    bottom: calc(14px + var(--safe-bottom));
+    z-index: 80;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 16px; border-radius: 99px;
+    background: var(--grad); color: #fff;
+    font-weight: 800; font-size: 13.5px;
+    box-shadow: 0 10px 26px rgba(255, 45, 85, 0.55);
+    transition: transform 0.2s;
+  }
+  .ai-fab:active { transform: scale(0.95); }
+  .ai-fab-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: pulse 1.6s infinite; }
+
+  .ai-window {
+    position: fixed;
+    right: 14px;
+    bottom: calc(68px + var(--safe-bottom));
+    z-index: 85;
+    width: 350px; max-width: calc(100vw - 28px);
+    height: 430px; max-height: calc(100vh - 100px);
+    background: #111827; border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 20px; display: none; flex-direction: column;
+    overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.85);
+  }
+  .ai-window.open { display: flex; }
+  .ai-head {
+    padding: 12px 15px; background: rgba(255, 45, 85, 0.18);
+    border-bottom: 1px solid var(--card-border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .ai-head b { font-size: 14px; display: block; }
+  .ai-head small { font-size: 11px; color: #34D399; }
+  .ai-msgs { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; }
+  .bubble { padding: 10px 13px; border-radius: 14px; max-width: 86%; line-height: 1.4; }
+  .bubble.bot { background: rgba(255,255,255,0.08); align-self: flex-start; border-bottom-left-radius: 4px; }
+  .bubble.user { background: var(--grad); align-self: flex-end; border-bottom-right-radius: 4px; }
+  .ai-chips { padding: 0 12px 8px; display: flex; gap: 6px; overflow-x: auto; }
+  .ai-chips button {
+    flex-shrink: 0; font-size: 11.5px; padding: 5px 10px; border-radius: 99px;
+    background: rgba(255,255,255,0.06); border: 1px solid var(--card-border); color: var(--muted);
+  }
+  .ai-form { display: flex; gap: 6px; padding: 10px; border-top: 1px solid var(--card-border); }
+  .ai-form input { flex: 1; background: rgba(255,255,255,0.07); padding: 9px 12px; border-radius: 10px; font-size: 13.5px; color: #fff; }
+  .ai-form button { padding: 0 14px; border-radius: 10px; background: var(--grad); font-weight: 800; }
+
+  /* Модальное окно */
+  .modal-bg {
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(5, 8, 15, 0.82); backdrop-filter: blur(6px);
+    display: none; place-items: center; padding: 18px;
+  }
+  .modal-bg.open { display: grid; }
+  .modal-box {
+    background: var(--bg-elevated); border: 1px solid rgba(255, 176, 32, 0.45);
+    border-radius: 22px; padding: 28px 22px; max-width: 380px; width: 100%; text-align: center;
+  }
+
+  /* Адаптив */
+  @media (max-width: 920px) {
+    .nav-links { display: none; }
+    .hero-grid, .calc-layout, .order-card { grid-template-columns: 1fr; }
+    .cars-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .cars-grid { grid-template-columns: 1fr; }
+    .panel, .order-card { padding: 18px; }
+    .kpi b { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 17h14M6 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM4 13l2-5h11l3 5v4H4v-4Z"/>
+        </svg>
+      </div>
+      <div class="brand-info">
+        <span class="brand-name">China Avtotransit</span>
+        <span class="brand-sub">Чита · МАПП Забайкальск</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#catalog">Модели</a>
+      <a href="#calc">Калькулятор</a>
+      <a href="#order">Заявка</a>
+    </nav>
+    <a href="#calc" class="nav-btn">Калькулятор</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill"><i></i>Прямые поставки из КНР в Забайкалье</div>
+        <h1>Автомобили из Китая под ключ в Чите — <span class="grad-text">на 25–35% выгоднее</span> авторынка</h1>
+        <p class="hero-desc">Подбираем, проверяем по 120 пунктам, выкупаем и растаможиваем через МАПП Забайкальск. Выдаём авто в Чите с готовым ЭПТС и фиксированной ценой в договоре.</p>
+        <div class="hero-cta">
+          <a href="#calc" class="btn btn-primary">Рассчитать стоимость</a>
+          <a href="#order" class="btn btn-ghost">Подобрать авто</a>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><b>14–20 дн.</b><span>срок до Читы</span></div>
+          <div class="kpi"><b>до 1,3 млн ₽</b><span>экономия к рынку</span></div>
+          <div class="kpi"><b>100% ЭПТС</b><span>в день выдачи</span></div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-top">
+          <span>Логистика под ключ</span>
+          <small>● Маршрут открыт</small>
+        </div>
+        <svg class="route-svg" viewBox="0 0 360 90" fill="none">
+          <path d="M28 62 Q 115 18, 180 48 T 332 32" stroke="rgba(255,255,255,0.14)" stroke-width="3" stroke-dasharray="6 6"/>
+          <path d="M28 62 Q 115 18, 180 48 T 332 32" stroke="url(#rgrad)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="28" cy="62" r="6" fill="#FFB020"/>
+          <text x="14" y="82" fill="#94A3B8" font-size="10" font-weight="700">КНР</text>
+          <circle cx="180" cy="48" r="6" fill="#FF6A3D"/>
+          <text x="145" y="72" fill="#94A3B8" font-size="10" font-weight="700">Забайкальск</text>
+          <circle cx="332" cy="32" r="7" fill="#FF2D55"/>
+          <circle cx="332" cy="32" r="13" stroke="#FF2D55" stroke-opacity="0.45" stroke-width="2"/>
+          <text x="316" y="56" fill="#FFFFFF" font-size="11" font-weight="800">Чита</text>
+          <defs>
+            <linearGradient id="rgrad" x1="28" y1="62" x2="332" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFB020"/><stop offset="0.5" stop-color="#FF6A3D"/><stop offset="1" stop-color="#FF2D55"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="route-tabs">
+          <button type="button" class="route-tab active" onclick="setRouteStep(0, this)">1. Выкуп в КНР</button>
+          <button type="button" class="route-tab" onclick="setRouteStep(1, this)">2. Таможня</button>
+          <button type="button" class="route-tab" onclick="setRouteStep(2, this)">3. Выдача в Чите</button>
+        </div>
+        <div class="route-info" id="routeInfo">
+          <b>Дни 1–7 · Проверка и экспорт</b>
+          Выездной осмотр с толщиномером, видеоотчёт, оплата по инвойсу и доставка до границы Маньчжурии.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="catalog">
+    <div class="container">
+      <div class="sec-tag">Популярные модели</div>
+      <h2>Что чаще всего заказывают в Чите</h2>
+      <p class="sec-sub">Нажмите «Рассчитать модель» — калькулятор ниже автоматически подставит кузов и ориентировочную цену в Китае.</p>
+      <div class="cars-grid">
+        <div class="car-card">
+          <div class="car-vis v1">
+            <span class="car-badge">Хит продаж</span>
+            <span class="car-spec-line">2.0T · 238 л.с. · 4WD</span>
+          </div>
+          <h3>Geely Monjaro</h3>
+          <div class="car-year">Кроссовер · 2023–2025 г.</div>
+          <div class="car-price-box"><small>Ориентир в Китае</small><b>2 450 000 ₽</b></div>
+          <button type="button" class="btn btn-primary" onclick="pickCar('Geely Monjaro', 2450000, 'suv')">Рассчитать модель</button>
+        </div>
+
+        <div class="car-card">
+          <div class="car-vis v2">
+            <span class="car-badge">Рама + 4WD</span>
+            <span class="car-spec-line">2.0T · 220 л.с. · Блокировки</span>
+          </div>
+          <h3>Tank 300</h3>
+          <div class="car-year">Внедорожник · 2023–2025 г.</div>
+          <div class="car-price-box"><small>Ориентир в Китае</small><b>2 800 000 ₽</b></div>
+          <button type="button" class="btn btn-primary" onclick="pickCar('Tank 300', 2800000, 'pickup')">Рассчитать модель</button>
+        </div>
+
+        <div class="car-card">
+          <div class="car-vis v3">
+            <span class="car-badge">Оптимальный выбор</span>
+            <span class="car-spec-line">2.0T · 233 л.с. · АКПП Aisin</span>
+          </div>
+          <h3>Changan UNI-K</h3>
+          <div class="car-year">Кроссовер · 2023–2025 г.</div>
+          <div class="car-price-box"><small>Ориентир в Китае</small><b>2 100 000 ₽</b></div>
+          <button type="button" class="btn btn-primary" onclick="pickCar('Changan UNI-K', 2100000, 'suv')">Рассчитать модель</button>
+        </div>
+
+        <div class="car-card">
+          <div class="car-vis v4">
+            <span class="car-badge">Электро / 4WD</span>
+            <span class="car-spec-line">544 л.с. · Запас 650+ км</span>
+          </div>
+          <h3>Zeekr 001</h3>
+          <div class="car-year">Универсал / Лифтбек · 2024 г.</div>
+          <div class="car-price-box"><small>Ориентир в Китае</small><b>3 400 000 ₽</b></div>
+          <button type="button" class="btn btn-primary" onclick="pickCar('Zeekr 001', 3400000, 'ev')">Рассчитать модель</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calc">
+    <div class="container">
+      <div class="sec-tag">Онлайн-калькулятор</div>
+      <h2>Расчёт цены под ключ в Чите</h2>
+      <p class="sec-sub">Выберите кузов, стоимость и возраст — итоговая сумма и выгода пересчитываются мгновенно.</p>
+
+      <div class="calc-layout">
+        <div class="panel">
+          <div class="chosen-bar" id="chosenBar">
+            <span>Модель: <b id="chosenName"></b></span>
+            <button type="button" onclick="clearModel()" style="font-size:18px;color:var(--muted);">✕</button>
+          </div>
+
+          <div class="ctrl-group">
+            <div class="ctrl-label"><span>Тип кузова / двигателя</span></div>
+            <div class="body-grid" id="bodySeg">
+              <button type="button" class="seg-btn active" data-val="suv" onclick="setBody('suv', this)">Кроссовер</button>
+              <button type="button" class="seg-btn" data-val="sedan" onclick="setBody('sedan', this)">Седан</button>
+              <button type="button" class="seg-btn" data-val="wagon" onclick="setBody('wagon', this)">Универсал</button>
+              <button type="button" class="seg-btn" data-val="minivan" onclick="setBody('minivan', this)">Минивэн</button>
+              <button type="button" class="seg-btn" data-val="pickup" onclick="setBody('pickup', this)">Пикап / Джип</button>
+              <button type="button" class="seg-btn" data-val="ev" onclick="setBody('ev', this)">Электро / Гибрид</button>
+            </div>
+          </div>
+
+          <div class="ctrl-group">
+            <div class="ctrl-label">
+              <span>Цена в Китае</span>
+              <b id="priceLabel">2 500 000 ₽</b>
+            </div>
+            <input type="range" id="priceRange" min="1200000" max="6000000" step="50000" value="2500000" oninput="recalc()">
+            <div class="range-ends"><span>1 200 000 ₽</span><span>6 000 000 ₽</span></div>
+          </div>
+
+          <div class="ctrl-group" style="margin-bottom:0;">
+            <div class="ctrl-label"><span>Возраст автомобиля</span></div>
+            <div class="age-grid" id="ageSeg">
+              <button type="button" class="seg-btn active" data-val="new" onclick="setAge('new', this)">Новое (до 3 лет)</button>
+              <button type="button" class="seg-btn" data-val="used" onclick="setAge('used', this)">Проходное (3–5 лет)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel res-panel">
+          <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px;">Детализация расходов</div>
+          <div class="res-line"><span>Цена автомобиля в Китае</span><b id="outBase">2 500 000 ₽</b></div>
+          <div class="res-line"><span>Таможенная пошлина</span><b id="outDuty">500 000 ₽</b></div>
+          <div class="res-line"><span>Утильсбор (льготный)</span><b id="outUtil">3 400 ₽</b></div>
+          <div class="res-line"><span>Логистика Забайкальск — Чита</span><b>45 000 ₽</b></div>
+          <div class="res-line"><span>Брокер, СБКТС и ЭПТС</span><b>65 000 ₽</b></div>
+          <div class="res-line"><span>Комиссия China Avtotransit</span><b>50 000 ₽</b></div>
+
+          <div class="res-total">
+            <small>Итого под ключ в Чите</small>
+            <div class="sum" id="outTotal">3 163 400 ₽</div>
+          </div>
+
+          <div class="res-save">
+            <span>Экономия к рынку Читы</span>
+            <b id="outSave">+885 752 ₽</b>
+          </div>
+
+          <p class="disclaimer">* Ориентировочный расчёт для физлиц (для авто свыше 160 л.с. ставка утильсбора рассчитывается индивидуально). Точную смету до рубля сделаем по конкретному лоту.</p>
+          <a href="#order" class="btn btn-primary" style="width:100%;margin-top:14px;">Зафиксировать расчёт</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="container">
+      <div class="order-card">
+        <div>
+          <div class="sec-tag">Бесплатный подбор</div>
+          <h2>Подберём 3–5 живых авто в Китае за 2 часа</h2>
+          <div class="order-points">
+            <div>✓ Офис в Чите: Геофизический микрорайон, 20</div>
+            <div>✓ Прямая таможня через МАПП Забайкальск</div>
+            <div>✓ Телефоны: +7 (914) 503-72-15 · +7 (914) 148-81-31</div>
+          </div>
+        </div>
+        <form class="order-form" onsubmit="submitOrder(event)">
+          <input type="text" class="field-inp" id="inpName" placeholder="Ваше имя" required>
+          <input type="tel" class="field-inp" id="inpPhone" placeholder="+7 (___) ___-__-__" required>
+          <input type="text" class="field-inp" id="inpCar" placeholder="Модель и ориентир бюджета">
+          <button type="submit" class="btn btn-primary">Получить подборку вариантов</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot-flex">
+    <div>© 2026 China Avtotransit — Автомобили из Китая под ключ в Чите</div>
+    <div>Чита, Геофизический мкр-н, 20 · МАПП Забайкальск</div>
+  </div>
+</footer>
+
+<button type="button" class="ai-fab" onclick="toggleAi()">
+  <span class="ai-fab-dot"></span>ИИ-чат
+</button>
+
+<div class="ai-window" id="aiWindow">
+  <div class="ai-head">
+    <div>
+      <b>ИИ-консультант China Avtotransit</b>
+      <small>● Онлайн · Чита / Забайкальск</small>
+    </div>
+    <button type="button" onclick="toggleAi()" style="font-size:18px;padding:4px 8px;color:var(--muted);">✕</button>
+  </div>
+  <div class="ai-msgs" id="aiMsgs">
+    <div class="bubble bot">Здравствуйте! Подскажу по ценам, срокам доставки через МАПП Забайкальск и оформлению ЭПТС. Какой автомобиль вас интересует?</div>
+  </div>
+  <div class="ai-chips">
+    <button type="button" onclick="askAi('Сколько стоит Geely Monjaro?')">Цена Monjaro?</button>
+    <button type="button" onclick="askAi('Какие сроки доставки в Читу?')">Сроки до Читы?</button>
+    <button type="button" onclick="askAi('Как происходит оплата?')">Оплата и договор</button>
+  </div>
+  <form class="ai-form" onsubmit="sendAi(event)">
+    <input type="text" id="aiInp" placeholder="Напишите вопрос...">
+    <button type="submit">➤</button>
+  </form>
+</div>
+
+<div class="modal-bg" id="okModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <div style="font-size:40px;margin-bottom:8px;">✅</div>
+    <h3 style="font-size:21px;margin-bottom:8px;">Заявка принята!</h3>
+    <p id="okText" style="font-size:14px;color:var(--muted);margin-bottom:18px;">Менеджер China Avtotransit в Чите свяжется с вами в течение 15 минут.</p>
+    <button type="button" class="btn btn-primary" style="width:100%;" onclick="document.getElementById('okModal').classList.remove('open')">Отлично</button>
+  </div>
+</div>
+
+<script>
+  const routeSteps = [
+    { title: 'Дни 1–7 · Проверка и экспорт', text: 'Выездной осмотр с толщиномером, видеоотчёт, оплата по инвойсу и доставка до границы Маньчжурии.' },
+    { title: 'Дни 8–13 · Таможня Забайкальск', text: 'Подача декларации на МАПП Забайкальск, оплата пошлины и утильсбора, прохождение лаборатории СБКТС.' },
+    { title: 'Дни 14–20 · Выдача авто в Чите', text: 'Получение действующего ЭПТС и передача автомобиля в Чите (Геофизический мкр-н, 20) с полным пакетом документов.' }
+  ];
+
+  function setRouteStep(idx, btn) {
+    document.querySelectorAll('.route-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const info = document.getElementById('routeInfo');
+    info.innerHTML = '<b>' + routeSteps[idx].title + '</b>' + routeSteps[idx].text;
+  }
+
+  let curBody = 'suv';
+  let curAge = 'new';
+  const fmt = n => Math.round(n).toLocaleString('ru-RU') + ' ₽';
+
+  function setBody(val, btn) {
+    curBody = val;
+    document.querySelectorAll('#bodySeg .seg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    recalc();
+  }
+
+  function setAge(val, btn) {
+    curAge = val;
+    document.querySelectorAll('#ageSeg .seg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    recalc();
+  }
+
+  function pickCar(name, price, body) {
+    document.getElementById('chosenName').textContent = name;
+    document.getElementById('chosenBar').classList.add('show');
+    document.getElementById('priceRange').value = price;
+    document.getElementById('inpCar').value = name + ' (~' + fmt(price) + ')';
+    const btn = document.querySelector('#bodySeg .seg-btn[data-val="' + body + '"]');
+    if (btn) setBody(body, btn);
+    document.getElementById('calc').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function clearModel() {
+    document.getElementById('chosenBar').classList.remove('show');
+  }
+
+  function recalc() {
+    const base = Number(document.getElementById('priceRange').value);
+    document.getElementById('priceLabel').textContent = fmt(base);
+
+    let rate = 0.20;
+    if (curBody === 'ev') rate = 0.15;
+    else if (curBody === 'pickup' || curBody === 'minivan') rate = 0.22;
+    else if (curAge === 'used') rate = 0.23;
+
+    const duty = base * rate;
+    const util = curAge === 'new' ? 3400 : 5200;
+    const total = base + duty + util + 45000 + 65000 + 50000;
+    const save = total * 0.28;
+
+    document.getElementById('outBase').textContent = fmt(base);
+    document.getElementById('outDuty').textContent = fmt(duty);
+    document.getElementById('outUtil').textContent = fmt(util);
+    document.getElementById('outTotal').textContent = fmt(total);
+    document.getElementById('outSave').textContent = '+' + fmt(save);
+  }
+
+  function toggleAi() {
+    document.getElementById('aiWindow').classList.toggle('open');
+  }
+
+  function pushMsg(text, who) {
+    const box = document.getElementById('aiMsgs');
+    const div = document.createElement('div');
+    div.className = 'bubble ' + who;
+    div.textContent = text;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+  }
+
+  function askAi(q) {
+    pushMsg(q, 'user');
+    setTimeout(() => {
+      let ans = 'Подберём точный вариант под ваш бюджет! Оставьте телефон в форме на сайте или позвоните в наш офис в Чите: +7 (914) 503-72-15.';
+      const l = q.toLowerCase();
+      if (l.includes('monjaro') || l.includes('монджаро')) {
+        ans = 'Geely Monjaro (2023–2025, 4WD) под ключ до Читы с ЭПТС выйдет около 3,1–3,35 млн ₽ в зависимости от комплектации. На рынке Читы они стоят от 4 млн ₽.';
+      } else if (l.includes('срок') || l.includes('долго')) {
+        ans = 'Средний срок от выкупа в Китае до выдачи в Чите с ЭПТС — 14–20 дней, так как мы везём напрямую через МАПП Забайкальск.';
+      } else if (l.includes('оплат') || l.includes('договор')) {
+        ans = 'Работаем по официальному договору: сначала выкуп авто в Китае по инвойсу, затем оплата таможни при прохождении границы в Забайкальске.';
+      }
+      pushMsg(ans, 'bot');
+    }, 350);
+  }
+
+  function sendAi(e) {
+    e.preventDefault();
+    const inp = document.getElementById('aiInp');
+    if (!inp.value.trim()) return;
+    askAi(inp.value.trim());
+    inp.value = '';
+  }
+
+  function submitOrder(e) {
+    e.preventDefault();
+    const name = document.getElementById('inpName').value;
+    document.getElementById('okText').textContent = name + ', ваша заявка принята! Менеджер China Avtotransit в Чите свяжется с вами в течение 15 минут.';
+    document.getElementById('okModal').classList.add('open');
+    e.target.reset();
+  }
+
+  recalc();
+</script>
+</body>
+</html>
